@@ -1,0 +1,70 @@
+.logo-circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-color: #7a11cd;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	z-index: 0;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.first-square,
+.second-square {
+	box-sizing: border-box;
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	transform: rotate(45deg);
+	top: 50%;
+	left: 50%;
+	border-radius: 5px;
+}
+
+.first-square {
+	background-color: #fff;
+	z-index: 3;
+	transform: translate(-25%, -50%) rotate(45deg);
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.first-square::after {
+	content: "";
+	position: absolute;
+	top: -10px;
+	bottom: -10px;
+	left: -10px;
+	right: -10px;
+
+	z-index: -1;
+	border-radius: 5px;
+}
+
+.second-square {
+	background-color: transparent;
+	z-index: 1;
+
+	border: 11px solid #e1ceee;
+
+	transform: translate(-75%, -50%) rotate(45deg);
+}
+
+.second-square::before {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: #7a11cd;
+	border-radius: 3px;
+	z-index: 2;
+}
