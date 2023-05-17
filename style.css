@@ -1,70 +1,81 @@
-.logo-circle {
+:root {
+	/* colors */
+	--clr-white: #fff;
+	--clr-accent: #7a11cd;
+	--secondary-clr: #e1ceee;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+}
+.logo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	background-color: #7a11cd;
+	background-color: var(--clr-accent);
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
 	z-index: 0;
 }
 
-.container {
+.logo__container {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
-.first-square,
-.second-square {
+.logo__square {
 	box-sizing: border-box;
 	position: absolute;
 	width: 70px;
 	height: 70px;
-	transform: rotate(45deg);
 	top: 50%;
 	left: 50%;
 	border-radius: 5px;
+	transform: rotate(45deg);
 }
 
-.first-square {
-	background-color: #fff;
+.logo__square--first {
+	background-color: var(--clr-white);
 	z-index: 3;
 	transform: translate(-25%, -50%) rotate(45deg);
 	box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
-.first-square::after {
+.logo__square--first::after {
 	content: "";
 	position: absolute;
 	top: -10px;
 	bottom: -10px;
 	left: -10px;
 	right: -10px;
-
 	z-index: -1;
 	border-radius: 5px;
 }
 
-.second-square {
+.logo__square--second {
 	background-color: transparent;
 	z-index: 1;
-
-	border: 11px solid #e1ceee;
-
+	border: 11px solid var(--secondary-clr);
 	transform: translate(-75%, -50%) rotate(45deg);
 }
 
-.second-square::before {
+.logo__square--second::before {
 	content: '';
 	position: absolute;
 	top: -2px;
 	left: -2px;
 	right: -2px;
 	bottom: -2px;
-	background: #7a11cd;
+	background: var(--clr-accent);
 	border-radius: 3px;
 	z-index: 2;
 }
