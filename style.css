@@ -41,8 +41,13 @@ body {
 	left: 50%;
 	border-radius: 5px;
 	transform: rotate(45deg);
+	transition: transform 0.6s ease-in-out;
 }
 
+.logo:hover .logo__square {
+	/* Move the square on hover */
+	transform: translate(-50%, -50%);
+}
 .logo__square--first {
 	background-color: var(--clr-white);
 	z-index: 3;
